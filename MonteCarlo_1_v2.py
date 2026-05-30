@@ -1,7 +1,7 @@
 """
 MonteCarlo_1_v2 — jaca MC varijanta za Loto 7/39.
 
-Razlika u odnosu na MonteCarlo_1:
+Razlika u odnosu na MonteCarlo_v1:
   - seed = 39
   - bez proste frekvencije pojedinacnih brojeva u skoru
   - skor koristi oblik kombinacije, gap distribuciju, parove brojeva i novelty
@@ -22,7 +22,7 @@ import numpy as np
 
 T0 = time.time()
 
-CSV_DRAWS = "/Users/4c/Desktop/GHQ/data/loto7_4624_k43.csv"
+CSV_DRAWS = "/data/loto7_4624_k43.csv"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TXT_PATH = os.path.join(HERE, "MonteCarlo_1_v2.txt")
@@ -400,9 +400,9 @@ print()
 MonteCarlo_1_v2 — jaca MC optimizacija bez proste frekvencije brojeva
 ========================================================================
 
-CSV:                  /Users/4c/Desktop/GHQ/data/loto7_4624_k43.csv
-Ucitano izvlacenja:    4624
-Train/valid split:     4161 / 463
+CSV:                  /data/loto7_4624_k43.csv
+Ucitano izvlacenja:   4624
+Train/valid split:    4161 / 463
 C(39,7):              15,380,937
 MC_RUNS:              1,000,000
 BATCH_SIZE:           100,000
@@ -437,31 +437,31 @@ Istorijske statistike oblika:
 
 Monte Carlo optimizacija — top 20 diverzifikovanih kandidata:
   rank  kombinacija                            score
-     1  (8, 11, 14, 23, 26, 33, 34)         2.608757
-     2  (8, 11, 16, 22, 23, 33, 37)         2.405372
-     3  (8, 11, 23, 25, 26, 32, 35)         2.390343
-     4  (8, 13, 22, 23, 26, 29, 34)         2.331274
-     5  (7, 8, 11, 23, 26, 29, 37)          2.307115
-     6  (5, 8, 11, 22, 23, 25, 28)          2.248418
-     7  (7, 8, 18, 23, 26, 34, 35)          2.238544
-     8  (7, 8, 13, 23, 24, 26, 33)          2.204225
-     9  (7, 8, 10, 16, 23, 25, 26)          2.143112
-    10  (8, 11, 16, 21, 23, 24, 26)         2.091236
-    11  (8, 10, 18, 21, 22, 23, 25)         2.081555
-    12  (4, 5, 8, 23, 26, 33, 38)           2.075488
-    13  (8, 10, 11, 22, 29, 34, 37)         2.068431
-    14  (4, 8, 9, 11, 22, 23, 26)           2.067414
-    15  (8, 9, 10, 21, 23, 26, 34)          2.052232
-    16  (8, 9, 11, 23, 28, 32, 33)          2.050135
-    17  (8, 10, 11, 16, 28, 33, 34)         2.045820
-    18  (8, 9, 11, 23, 25, 31, 34)          2.005132
-    19  (8, 10, 13, 23, 25, 34, 35)         1.996984
-    20  (8, 9, 11, 13, 26, 28, 34)          1.985844
+     1  (8, x, 14, y, 26, z, 34)         2.608757
+     2  (8, x, 16, y, 23, z, 37)         2.405372
+     3  (8, x, 23, y, 26, z, 35)         2.390343
+     4  (8, x, 22, y, 26, z, 34)         2.331274
+     5  (7, x, 11, y, 26, z, 37)          2.307115
+     6  (5, x, 11, y, 23, z, 28)          2.248418
+     7  (7, x, 18, y, 26, z, 35)          2.238544
+     8  (7, x, 13, y, 24, z, 33)          2.204225
+     9  (7, x, 10, y, 23, z, 26)          2.143112
+    10  (8, x, 16, y, 23, z, 26)         2.091236
+    11  (8, x, 18, y, 22, z, 25)         2.081555
+    12  (4, x, 8, y, 26, z, 38)           2.075488
+    13  (8, x, 11, y, 29, z, 37)         2.068431
+    14  (4, x, 9, y, 22, z, 26)           2.067414
+    15  (8, x, 10, y, 23, z, 34)          2.052232
+    16  (8, x, 11, y, 28, z, 33)          2.050135
+    17  (8, x, 11, y, 28, z, 34)         2.045820
+    18  (8, x, 11, y, 25, z, 34)          2.005132
+    19  (8, x, 13, y, 25, z, 35)         1.996984
+    20  (8, x, 11, y, 26, z, 34)          1.985844
 
 Ukupno vreme: 0:00:06 (6.6 s)
 
-TXT saved -> /Users/4c/Desktop/GHQ/MonteCarlo/MonteCarlo_1_v2.txt
-PNG saved -> /Users/4c/Desktop/GHQ/MonteCarlo/MonteCarlo_1_v2.png
+TXT saved -> /MonteCarlo_1_v2.txt
+PNG saved -> /MonteCarlo_1_v2.png
 """
 
 
@@ -492,6 +492,4 @@ diverzifikaciju top kandidata
 izlaze:
 MonteCarlo_1_v2.txt
 MonteCarlo_1_v2.png
-
-verovatno će trajati duže od prve verzije zbog 1M MC kandidata.
 """
